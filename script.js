@@ -20,10 +20,10 @@
     } else if (text.match(/[a-zA-Z]/) != null) {
       ex2_content.textContent = "Numer nie może zawierać liter";
       ifError = true;
-    } else if (text.match(/[!@#$%^&*]/ != null)) {
+    } else if (text.match(/[!@#$%^&*()\-_=+[{\]}\\|;:'",<.>/?]/) != null) {
       ex2_content.textContent = "Numer nie może zawierać znaków specjalnych";
       ifError = true;
-    } else if (!ifError)
-      ex2_content.textContent = "Numer telefonu jest poprawny";
+    }
+    if (!ifError) ex2_content.textContent = "Numer telefonu jest poprawny";
   });
 })();

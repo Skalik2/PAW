@@ -14,18 +14,20 @@
       })
   })
 
+
   cw1.addEventListener("click", function () {
+    answer.innerHTML = "Loading...";
     fetch('https://jsonplaceholder.typicode.com/posts')
       .then(response => response.json())
       .then(array => {
-        console.log(array)
+        answer.innerHTML = "";
         array.forEach(element => {
-          answer.innerHTML += "Uzytkownik: " + JSON.stringify(element.userId) + "&nbsp;&nbsp;";
+          answer.innerHTML += "<b>Uzytkownik</b>: " + JSON.stringify(element.userId) + "&nbsp;&nbsp;";
           answer.innerHTML += "Id: " + JSON.stringify(element.id) + "<br>";
-          answer.innerHTML += "Tytuł: " + JSON.stringify(element.title) + "<br>";
+          answer.innerHTML += "<b>Tytuł</b>: " + JSON.stringify(element.title) + "<br>";
           answer.innerHTML += "Opis: " + JSON.stringify(element.body) + "<br>";
           answer.innerHTML += "<br><br>";
-        });
+        })
       })
   })
 

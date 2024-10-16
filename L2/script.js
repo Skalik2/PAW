@@ -5,6 +5,8 @@
   const cw3 = document.getElementById('cw3')
   const answer = document.getElementById('answer')
 
+  const loadingDiv = document.getElementById("loadingDiv");
+
   example.addEventListener("click", function () {
     fetch('https://jsonplaceholder.typicode.com/posts')
       .then(response => response.json())
@@ -17,10 +19,12 @@
 
   cw1.addEventListener("click", function () {
     answer.innerHTML = "Loading...";
+    loadingDiv.style.visibility = "visible";
     fetch('https://jsonplaceholder.typicode.com/posts')
       .then(response => response.json())
       .then(array => {
         answer.innerHTML = "";
+        loadingDiv.style.visibility = "hidden";
         array.forEach(element => {
           answer.innerHTML += "<b class='userId'>Uzytkownik: " + JSON.stringify(element.userId) + "</b>&nbsp;&nbsp;";
           answer.innerHTML += "<b class='postId'>Id: " + JSON.stringify(element.id) + "</b><br>";
@@ -35,10 +39,12 @@
 
   cw2.addEventListener("click", function () {
     answer.innerHTML = "Loading...";
+    loadingDiv.style.visibility = "visible";
     fetch('https://jsonplaceholder.typicode.com/posts/1')
       .then(response => response.json())
       .then(el => {
         answer.innerHTML = "";
+        loadingDiv.style.visibility = "hidden";
         answer.innerHTML += "<b class='userId'>Uzytkownik: " + JSON.stringify(el.userId) + "</b>&nbsp;&nbsp;";
         answer.innerHTML += "<b class='postId'>Id: " + JSON.stringify(el.id) + "</b><br>";
         answer.innerHTML += "<b>Tytuł</b>: " + JSON.stringify(el.title)+ "<br>";

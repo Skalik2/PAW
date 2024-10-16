@@ -14,3 +14,17 @@ html {
   word-spacing: 4px;
   max-width: 300px;
 }
+#loadingDiv{
+  position: fixed;
+  width: 80%;
+  height: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: bisque;
+  font-size: 30px;
+  top: 0;
+  left: 10%;
+  visibility: hidden;
+  
+}

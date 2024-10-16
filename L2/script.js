@@ -27,6 +27,8 @@
           answer.innerHTML += "<b>Tytuł</b>: " + JSON.stringify(element.title) + "<br>";
           answer.innerHTML += "<p class='description'>" + JSON.stringify(element.body) + "</p><br>";
           answer.innerHTML += "<br><br>";
+        console.log(answer.innerText);
+
         })
       })
   })
@@ -42,6 +44,7 @@
         answer.innerHTML += "<b>Tytuł</b>: " + JSON.stringify(el.title)+ "<br>";
         answer.innerHTML += "<p class='description'>" + JSON.stringify(el.body) + "</p><br>";
         answer.innerHTML += "<br><br>";
+        console.log(answer.innerText);
       })
   })
 

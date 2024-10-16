@@ -2,3 +2,15 @@ html {
   height: 100%;
   width: 100%;
 }
+.postId {
+  color: black;
+  background-color: yellow;
+}
+.userId {
+  color: black;
+  background-color: blue;
+}
+.description {
+  word-spacing: 4px;
+  max-width: 300px;
+}

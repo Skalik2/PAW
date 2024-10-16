@@ -22,10 +22,10 @@
       .then(array => {
         answer.innerHTML = "";
         array.forEach(element => {
-          answer.innerHTML += "<b>Uzytkownik</b>: " + JSON.stringify(element.userId) + "&nbsp;&nbsp;";
-          answer.innerHTML += "Id: " + JSON.stringify(element.id) + "<br>";
+          answer.innerHTML += "<b class='userId'>Uzytkownik: " + JSON.stringify(element.userId) + "</b>&nbsp;&nbsp;";
+          answer.innerHTML += "<b class='postId'>Id: " + JSON.stringify(element.id) + "</b><br>";
           answer.innerHTML += "<b>Tytuł</b>: " + JSON.stringify(element.title) + "<br>";
-          answer.innerHTML += "Opis: " + JSON.stringify(element.body) + "<br>";
+          answer.innerHTML += "<p class='description'>" + JSON.stringify(element.body) + "</p><br>";
           answer.innerHTML += "<br><br>";
         })
       })
@@ -37,10 +37,10 @@
       .then(response => response.json())
       .then(el => {
         answer.innerHTML = "";
-        answer.innerHTML += "<b>Uzytkownik</b>: " + JSON.stringify(el.userId) + "&nbsp;&nbsp;";
-        answer.innerHTML += "Id: " + JSON.stringify(el.id) + "<br>";
-        answer.innerHTML += "<b>Tytuł</b>: " + JSON.stringify(el.title) + "<br>";
-        answer.innerHTML += "Opis: " + JSON.stringify(el.body) + "<br>";
+        answer.innerHTML += "<b class='userId'>Uzytkownik: " + JSON.stringify(el.userId) + "</b>&nbsp;&nbsp;";
+        answer.innerHTML += "<b class='postId'>Id: " + JSON.stringify(el.id) + "</b><br>";
+        answer.innerHTML += "<b>Tytuł</b>: " + JSON.stringify(el.title)+ "<br>";
+        answer.innerHTML += "<p class='description'>" + JSON.stringify(el.body) + "</p><br>";
         answer.innerHTML += "<br><br>";
       })
   })

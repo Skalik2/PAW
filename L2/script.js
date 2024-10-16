@@ -78,10 +78,27 @@
       });
   })
 
+  cw4.addEventListener("click", function () {
 
-
-    
-
-  
+      fetch("./file.json")
+          .then((res) => {
+              if (!res.ok) {
+                  throw new Error
+                      (`HTTP error! Status: ${res.status}`);
+              }
+              return res.json();
+          })
+          .then((data) => 
+              data.forEach(el => {
+                answer.innerHTML += "<b class='userId'>Uzytkownik: " + JSON.stringify(el.userId) + "</b>&nbsp;&nbsp;";
+                answer.innerHTML += "<b class='postId'>Id: " + JSON.stringify(el.id) + "</b><br>";
+                answer.innerHTML += "<b>Tytuł</b>: " + JSON.stringify(el.title)+ "<br>";
+                answer.innerHTML += "<p class='description'>" + JSON.stringify(el.body) + "</p><br>";
+                answer.innerHTML += "<br><br>";
+                console.log(answer.innerText);
+              }))
+          .catch((error) =>
+              console.error("Unable to fetch data:", error));
+  });
 
 })();
